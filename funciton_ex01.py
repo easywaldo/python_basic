@@ -6,5 +6,5 @@ showTime()
 msg = "Life is short"
 print(msg.split())
 
-message = raw_input("input your message \n")
+message = input("input your message \n")
 print("your message is " + message)
