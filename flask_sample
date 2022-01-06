@@ -1,0 +1,31 @@
+from flask import Flask
+app = Flask(__name__)
+print(app)
+
+
+def copyright(func):
+    def new_func():
+        print("@all rights reserved waldo")
+        func()
+    return new_func
+
+@copyright
+def smile():
+    print("smile")
+    
+@copyright
+def angry():
+    print("angry")
+    
+@copyright
+def laugh():
+    print("laugh")
+
+@copyright
+def cry():
+    print("cry")
+    
+smile()
+angry()
+laugh()
+cry()
