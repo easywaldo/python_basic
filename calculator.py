@@ -1,7 +1,9 @@
 class Calculator:
+    population = 0
     def __init__(self, a, b):
         self.a = a
         self.b = b
+        Calculator.population += 1
 
     def add(self):
         return self.a + self.b
@@ -27,3 +29,9 @@ print(cal1.div())
 
 print(cal2.a)
 print(cal2.b)
+
+
+cal1.a = 100
+print(cal1.a)
+
+print(Calculator.population)
