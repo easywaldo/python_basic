@@ -22,3 +22,8 @@ g2 = number_generator()
 a = next(g)
 b = next(g)
 print(a, b)
+
+
+g3 = iter(number_generator())
+for n in g3:
+    print(n)
