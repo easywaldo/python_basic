@@ -33,3 +33,7 @@ print(bixby.__dict__)
 print(Robot.how_many())
 
 Robot.say_hi(siri)
+
+
+print(dir(siri))
+
