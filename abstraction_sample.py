@@ -23,6 +23,10 @@ class Robot:
     @staticmethod
     def get_common_robot():
         return Robot("common robot", 999)
+    def get_instance(self):
+        print('get instance')
+        print(id(self))
+        
         
     
 siri = Robot("siri", 124823923)
@@ -55,3 +59,7 @@ print(commonRobot)
 
 commonRobot2 = Robot.get_common_robot()
 print(commonRobot2)
+
+
+print(siri.get_instance())
+print(id(siri))
