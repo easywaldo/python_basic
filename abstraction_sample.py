@@ -20,6 +20,10 @@ class Robot:
     @classmethod
     def how_many(cls):
         print(f"we have {cls.population} robots.")
+    @staticmethod
+    def get_common_robot():
+        return Robot("common robot", 999)
+        
     
 siri = Robot("siri", 124823923)
 javis = Robot("javis", 2943848)
@@ -44,3 +48,10 @@ print(dir(Robot))
 
 print(Robot.__doc__)
 print(Robot.__class__)
+
+
+commonRobot = Robot.get_common_robot()
+print(commonRobot)
+
+commonRobot2 = Robot.get_common_robot()
+print(commonRobot2)
