@@ -1,3 +1,7 @@
+
+"""Robot 클래스에 대한 주석
+
+"""
 class Robot:
     population = 0
     def __init__(self, name, code):
@@ -36,4 +40,7 @@ Robot.say_hi(siri)
 
 
 print(dir(siri))
+print(dir(Robot))
 
+print(Robot.__doc__)
+print(Robot.__class__)
