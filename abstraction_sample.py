@@ -31,3 +31,5 @@ print(javis.__dict__)
 print(bixby.__dict__)
 
 print(Robot.how_many())
+
+Robot.say_hi(siri)
