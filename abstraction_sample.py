@@ -1,6 +1,6 @@
 
-"""Robot 클래스에 대한 주석
-
+"""
+    Robot 클래스에 대한 주석
 """
 class Robot:
     population = 0
@@ -20,12 +20,19 @@ class Robot:
     @classmethod
     def how_many(cls):
         print(f"we have {cls.population} robots.")
+        print(cls)
     @staticmethod
     def get_common_robot():
         return Robot("common robot", 999)
     def get_instance(self):
         print('get instance')
         print(id(self))
+    def __str__(self):
+        return f"{self.name} robot!!"
+    def __call__(self):
+        print("call")
+        return f"{self.name} robot!!"
+        
         
         
     
@@ -50,6 +57,7 @@ Robot.say_hi(siri)
 print(dir(siri))
 print(dir(Robot))
 
+print('doc...')
 print(Robot.__doc__)
 print(Robot.__class__)
 
@@ -63,3 +71,5 @@ print(commonRobot2)
 
 print(siri.get_instance())
 print(id(siri))
+
+siri()
