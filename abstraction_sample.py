@@ -81,9 +81,8 @@ print(siri())
 class Siri(Robot):
     population = 0
     def __init__(self, name, code):
-        self.name = name
-        self.code = code
-        Siri.population += 1  
+        Siri.population += 1
+        super().__init__(name, code)
     def say_hi(self):
         print(f'greetings, my master call me {self.name}.')
     @classmethod
