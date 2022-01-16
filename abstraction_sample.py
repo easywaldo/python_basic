@@ -79,7 +79,18 @@ print(siri())
 
 
 class Siri(Robot):
-    pass
+    population = 0
+    def __init__(self, name, code):
+        self.name = name
+        self.code = code
+        Siri.population += 1  
+    def say_hi(self):
+        print(f'greetings, my master call me {self.name}.')
+    @classmethod
+    def how_many(cls):
+        print(f"we have {cls.population} robots.")
+        print(cls)
+        
 
 siri = Siri("andoro", 10000)
 print(siri)
@@ -87,3 +98,6 @@ print(siri.are_you_robot())
 print(Robot.mro())
 
 print(siri.cal_add(100, 200))
+
+siri.say_hi()
+Siri.how_many()
