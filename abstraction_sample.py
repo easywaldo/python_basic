@@ -32,6 +32,9 @@ class Robot:
     def __call__(self):
         print("call")
         return f"{self.name} robot!!"
+    @staticmethod
+    def are_you_robot():
+        return "i am robot"
         
         
         
@@ -74,4 +77,13 @@ print(id(siri))
 
 print(siri())
 
+
+class Siri(Robot):
+    pass
+
+siri = Siri("andoro", 10000)
+print(siri)
+print(siri.are_you_robot())
 print(Robot.mro())
+
+print(siri.cal_add(100, 200))
