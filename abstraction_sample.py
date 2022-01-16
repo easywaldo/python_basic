@@ -72,4 +72,4 @@ print(commonRobot2)
 print(siri.get_instance())
 print(id(siri))
 
-siri()
+print(siri())
