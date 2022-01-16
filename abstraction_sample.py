@@ -73,3 +73,5 @@ print(siri.get_instance())
 print(id(siri))
 
 print(siri())
+
+print(Robot.mro())
