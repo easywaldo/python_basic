@@ -100,3 +100,24 @@ print(siri.cal_add(100, 200))
 
 siri.say_hi()
 Siri.how_many()
+
+
+
+print(dir(object))
+
+print(object.__name__)
+print(int)
+print(int.mro())
+print(int.__init__(3.7))
+print(int(7.8))
+
+class A:
+    pass
+class B:
+    pass
+class C:
+    pass
+class D(A, B, C):
+    pass
+
+print(D.mro())
