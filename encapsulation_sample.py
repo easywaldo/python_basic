@@ -1,7 +1,7 @@
 class Robot:
     population = 0
     def __init__(self, name, age):
-        self.name = name
+        self.__name = name
         self.__age = age
         Robot.population += 1
     
@@ -13,6 +13,19 @@ class Robot:
     
     def getAge(self):
         return self.__age
+    
+    @property
+    def getName(self):
+        return self.__name
+    
+    @property
+    def age(self):
+        return self.__age
+    
+    # @age.setter
+    # def age(self, ageValue):
+    #     print(ageValue)
+    #     self.__age = ageValue
     
     
     @classmethod
@@ -33,5 +46,9 @@ robotSiri = Siri('mysiri', 20)
 
 
 
-##robot1.age = 10000
+
+print(robotSiri.getAge())
+print(robotSiri.getName)
+
+robotSiri.age = 9999
 print(robotSiri.getAge())
