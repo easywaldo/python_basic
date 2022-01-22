@@ -22,10 +22,13 @@ class Robot:
     def age(self):
         return self.__age
     
-    # @age.setter
-    # def age(self, ageValue):
-    #     print(ageValue)
-    #     self.__age = ageValue
+    @age.setter
+    def age(self, ageValue):
+        print(ageValue)
+        self.__age = ageValue
+        if (self.__age < 0):
+            raise ValueError('Age must be greater than zero')
+            
     
     
     @classmethod
@@ -52,3 +55,6 @@ print(robotSiri.getName)
 
 robotSiri.age = 9999
 print(robotSiri.getAge())
+
+
+robotSiri.age = -1
