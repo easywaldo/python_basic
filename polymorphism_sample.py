@@ -44,10 +44,15 @@ class Bixby(Robot):
         print("안녕하세요")
         
 
-##robot = Robot('robot', 7)
-Robot siri = Siri('siri', 5)
-Robot siriKo = SiriKo('siriKo', 3)
+siri = Siri('siri', 5)
+siriKo = SiriKo('siriKo', 3)
 
 
-siri.say()
-siriKo.say()
+##siri.say()
+##siriKo.say()
+
+def commonSay(robot : Robot):
+    robot.say()
+    
+commonSay(siri)
+commonSay(siriKo)
