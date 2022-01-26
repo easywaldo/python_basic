@@ -1,16 +1,16 @@
 from typing import Generic, Optional, Union, TypeVar
 
-ARM = TypeVar("ARM")
-HEAD = TypeVar("HEAD")
+A = TypeVar("A", int, float, str)
+H = TypeVar("H", int, float, str)
 
 
-class Robot(Generic[ARM, HEAD]):
-    def __init__(self, arm: ARM, head: HEAD):
+class Robot(Generic[A, H]):
+    def __init__(self, arm: A, head: H):
         self.arm = arm
         self.head = head
         
     def decode(self):
-        decodedValue: Optional[ARM] = None
+        decodedValue: Optional[A] = None
         pass
     
     def __str__(self):
@@ -22,7 +22,7 @@ robot: Robot = Robot[int, int](122432, 343534)
 robot2: Robot = Robot[str, str]("2323544", "84539232")
 robot3: Robot = Robot[float, str](345483.135, "249308543")
 
-class Siri(Robot[ARM, HEAD]):
+class Siri(Robot[A, H]):
     pass
         
 
