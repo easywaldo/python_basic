@@ -2,6 +2,7 @@ from typing import Generic, Optional, Union, TypeVar
 
 A = TypeVar("A", int, float, str)
 H = TypeVar("H", int, float, str)
+T = TypeVar("T", int, float, str)
 
 
 class Robot(Generic[A, H]):
@@ -38,3 +39,13 @@ print(robot3)
 print(siri1)
 print(siri2)
 print(siri3)
+
+
+
+### function
+def test(x: T) -> T:
+    print(x)
+    print(type(x))
+    return x
+
+test(10000)
