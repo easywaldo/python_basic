@@ -52,3 +52,11 @@ print(numList)
 
 del numList[0]
 print(numList)
+
+
+for n in range(10):
+    print(n)
+result = [x * 2 for x in range(10)]
+print(result)
+result2 = [x for x in range(10) if x > 5]
+print(result2)
