@@ -69,5 +69,5 @@ print(searchResult)
 
 
 listWord = ['오메가3', '비타민C500', None, '홍삼절편', None]
-searchResult = [s for s in listWord if s != None]
+searchResult = [s if s != None else '' for s in listWord]
 print(searchResult)
