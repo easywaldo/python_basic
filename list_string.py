@@ -65,3 +65,9 @@ print(result2)
 listWord = ['apple', 'watch', 'apolo', 'start', 'americano']
 searchResult = [n for n in listWord if n.index('a') == 0]
 print(searchResult)
+
+
+
+listWord = ['오메가3', '비타민C500', None, '홍삼절편', None]
+searchResult = [s for s in listWord if s != None]
+print(searchResult)
