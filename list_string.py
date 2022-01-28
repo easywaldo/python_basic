@@ -40,3 +40,15 @@ print(list)
 
 list.clear()
 print(list)
+
+list.append(77)
+print(list)
+list.remove(77)
+print(list)
+
+numList = [1,2,344,5,567,68,2,3,4,55,7,0]
+numList.sort()
+print(numList)
+
+del numList[0]
+print(numList)
