@@ -60,3 +60,8 @@ result = [x * 2 for x in range(10)]
 print(result)
 result2 = [x for x in range(10) if x > 5]
 print(result2)
+
+
+listWord = ['apple', 'watch', 'apolo', 'start', 'americano']
+searchResult = [n for n in listWord if n.index('a') == 0]
+print(searchResult)
