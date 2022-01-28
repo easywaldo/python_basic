@@ -30,3 +30,13 @@ print(message)
 
 formatString = "{0} 님 수강기간이 {1} 일 남았습니다"
 print(formatString.format(studentName, duration))
+
+
+for index, number in enumerate([1,2,3,4,5,6,76]):
+    print(index, number)
+
+list = [1,23,34]
+print(list)
+
+list.clear()
+print(list)
