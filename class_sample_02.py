@@ -35,3 +35,12 @@ class Dragon(Monster):
 dragon:Dragon = Dragon('azushara', ('fire', 'lighting', 'crash', 'blizzard'))
 dragon.move()
 dragon.doSkill()
+
+
+def doMove(monster:Monster):
+    print('funcion do move..')
+    monster.move()
+    
+doMove(monster)
+doMove(sharky)
+doMove(wolverin)
