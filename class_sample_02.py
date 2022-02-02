@@ -1,3 +1,6 @@
+import random
+
+
 class Monster:
     def __init__(self, name):
         self.name = name
@@ -19,3 +22,16 @@ wolverin = Wolf('wolverin')
 monster.move()
 sharky.move()
 wolverin.move()
+
+class Dragon(Monster):
+    def __init__(self, name, skill):
+        super().__init__(name)
+        self.skill = skill
+    def move(self):
+        print(f'{self.name} flying..')
+    def doSkill(self):
+        print(f'{self.skill[random.randint(0, 3)]} doing..')
+        
+dragon:Dragon = Dragon('azushara', ('fire', 'lighting', 'crash', 'blizzard'))
+dragon.move()
+dragon.doSkill()
