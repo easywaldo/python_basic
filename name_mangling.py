@@ -12,6 +12,9 @@ class Unit():
         return self.__hp
     def minus(self):
         self.__hp -= 1
+    @classmethod
+    def getCount(cls):
+        return cls.count
     
 
 myUnit = Unit(100, "robot", "waldo")
@@ -21,3 +24,12 @@ print(myUnit.hp)
 ## name mangling
 myUnit._Unit__hp = 10000
 print(myUnit.hp)
+
+print(myUnit.count)
+myUnit.count += 1
+
+print(myUnit.count)
+
+
+print(Unit.getCount())
+print(Unit.count)
