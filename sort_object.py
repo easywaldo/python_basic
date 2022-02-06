@@ -22,3 +22,18 @@ student_objects = [
     Student('dave', 'B', 10),
 ]
 print(sorted(student_objects, key=lambda student: student.age))
+
+
+
+from operator import itemgetter, attrgetter
+
+print(sorted(student_tuples, key=itemgetter(2)))
+print(sorted(student_objects, key=attrgetter('grade')))
+
+
+print(sorted(student_tuples, key=itemgetter(1,2)))
+print(sorted(student_objects, key=attrgetter('name', 'grade')))
+
+
+print(sorted(student_tuples, key=itemgetter(2), reverse=True))
+print(sorted(student_objects, key=attrgetter('name', 'grade'), reverse=False))
