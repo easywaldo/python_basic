@@ -4,7 +4,7 @@ class Players:
     _ownMineral = 0
     _ownUnitList = []
     
-    def __init__(self, _ownMineral, _ownGas, _ownUnitList):
+    def __init__(self, _ownMineral, _ownGas, _ownUnitList=[]):
         Players._ownGas = _ownGas
         Players._ownMineral = _ownMineral
         Players._ownUnitList = _ownUnitList
@@ -17,7 +17,6 @@ class Players:
     @classmethod
     def produce(self, nickName, mineral, gas, hp, defense, ofense):
         
-        print("test")
         print(Players._ownGas)
         print(Players._ownMineral)
         
@@ -26,12 +25,16 @@ class Players:
         
         if Players._ownGas < gas:
             print(f'가스가 {gas - Players._ownGas} 만큼 부족합니다.')
+            return
         if Players._ownMineral < mineral:
             print(f'미네랄이 {mineral - Players._ownMineral} 만큼 부족합니다.')
+            return
  
         unit: Unit = Unit(nickName, mineral, gas, hp, defense, ofense)
         
-        print(unit)
+        Players._ownGas -= gas
+        Players._ownMineral -= mineral
+        
         Players._ownUnitList.append(unit)
     
 class Unit:
@@ -47,5 +50,6 @@ p1: Players = Players(1000, 1000, [])
 p1.produce('질럿', 100, 100, 50, 9, 2)    
 p1.produce('드라군', 125, 80, 200, 12, 5)
 p1.produce('템플러', 50, 200, 100, 4, 20)
+p1.produce('캐리어', 800, 560, 600, 50, 125)
 
 p1.showUnitList()
