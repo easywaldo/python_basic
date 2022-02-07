@@ -37,3 +37,13 @@ print(sorted(student_objects, key=attrgetter('name', 'grade')))
 
 print(sorted(student_tuples, key=itemgetter(2), reverse=True))
 print(sorted(student_objects, key=attrgetter('name', 'grade'), reverse=False))
+
+
+def multisort(xs, specs):
+    for key, reverse in reversed(specs):
+        print(f'keys is {key}')
+        print(f'reverse is {reverse}')
+        xs.sort(key=attrgetter(key), reverse=reverse)
+    return xs
+
+print(multisort(list(student_objects), (('grade', True), ('age', False))))
