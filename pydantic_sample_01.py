@@ -27,6 +27,9 @@ print(user.dict())
 
 print(user.name)
 
+assert user.id == 123
+assert user.name == 'waldo'
+assert user.__fields_set__ == {'id', 'signup_ts', 'friends'}
 
 try:
     User(signup_ts='broken', friends=[1, 2, 'not number'])
