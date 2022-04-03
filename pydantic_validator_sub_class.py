@@ -7,14 +7,16 @@ class ParentModel(BaseModel):
 
 
 class ChildModel(ParentModel):
-    @validator('names', each_item=True)
+    @validator('names', each_item=False)
     def check_names_not_empty(cls, v):
         assert v != '', 'Empty string are not allowed.'
+        assert len(v) > 0, 'List is not allowed emtpy.'
         return v
 
 
 try:
     child = ChildModel(names=['Alice', 'Bob', 'Eve', ''])
+    empty_child = ChildModel(names=[])
 except ValidationError as e:
     print(e)
 else:
