@@ -66,3 +66,16 @@ print(p1._fields, p2._fields, p3._fields)   # 필드네임 확인
 
 print(p1._asdict())     # OrderedDitc 반환
 print(p4._asdict())
+
+
+Classes = namedtuple('Classes', ['rank', 'number'])
+
+numbers = [str(n) for n in range(1, 21)]
+ranks = 'A B C D'.split()
+
+print(numbers)
+print(ranks)
+
+students = [Classes(r, n) for r in ranks for n in numbers]
+print(len(students))
+print(students)
