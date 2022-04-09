@@ -62,3 +62,18 @@ print(g_list)
 print(sys.getsizeof(g_list))
 print('변환.....')
 print(list(g_list))
+
+
+mask1 = [['~'] * 3 for _ in range(3)]       # id 값이 서로 다르게 생성
+mask2 = [['~'] * 3] * 3                     # id 값이 동일하게 생성
+print(mask1)
+print(mask2)
+
+mask1[0][1] = 'X'
+print(mask1)
+
+mask2[0][1] = 'X'
+print(mask2)
+
+print([id(i) for i in mask1])
+print([id(i) for i in mask2])
