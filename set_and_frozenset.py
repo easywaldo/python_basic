@@ -1,3 +1,6 @@
+from types import MappingProxyType
+
+
 a = {'a', 'b', 'c', 'd', 'f'}
 b = {'a', 'b', 'd', 'f', 'g'}
 
@@ -68,3 +71,19 @@ print(s2)
 
 s3 = {x for x in s2 if x < 50}
 print(s3)
+
+
+
+d = {'key': 'value1'}
+
+# read only
+d_frozen = MappingProxyType(d)
+
+print(d, id(d))
+print(d_frozen, id(d_frozen))
+
+# 수정불가
+# d_frozen['key2'] = 'value2'
+
+# 수정가능
+d['key2'] = 'value2'
