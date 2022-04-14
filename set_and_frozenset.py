@@ -87,3 +87,39 @@ print(d_frozen, id(d_frozen))
 
 # 수정가능
 d['key2'] = 'value2'
+
+
+s1 = {'apple', 'orange', 'apple', 'orange', 'kiwi'}
+s2 = set(['apple', 'orange', 'apple', 'orange', 'kiwi'])
+s3 = {3}
+s4 = set()
+s5 = frozenset({'apple', 'orange', 'apple', 'orange', 'kiwi'})
+print(type(s4))
+
+s1.add('melon')
+print(s1)
+
+# 추가 불가
+# s5.add('melon')
+
+
+print(s1, type(s1))
+print(s2, type(s2))
+print(s3, type(s3))
+print(s4, type(s4))
+print(s5, type(s5))
+
+#  선언 최적화
+# 바이트 코드 > 파이썬 인터프리터 실행
+from dis import dis
+
+print('-----')
+print(dis('{10}'))
+print('-----')
+print(dis('set([10])'))
+
+
+# 리스트 컴프리헨션
+print('-----')
+from unicodedata import name
+print({name(chr(i), '') for i in range(0, 256)})
