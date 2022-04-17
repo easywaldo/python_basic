@@ -1,3 +1,6 @@
+from regex import R
+
+
 c = 300
 
 
@@ -50,3 +53,36 @@ print(average_cls(10))
 print(average_cls(20))
 print(average_cls(50))
 print(average_cls(70))
+
+
+# 외부에서 호출된 함수의 변수값, 상태(레퍼런스) 복사후 저장 -> 이후에 접근(엑세스) 가능
+def closure_ex1():
+    series = []
+    # 자유 변수
+    # 클로저 영역
+
+    def averager(v):
+        series.append(v)
+        print('inner >> {} / {}'.format(series, len(series)))
+        return sum(series) / len(series)
+
+    return averager
+
+
+avg_closure_1 = closure_ex1()
+print(avg_closure_1)
+print(avg_closure_1(10))
+print(avg_closure_1(30))
+print(avg_closure_1(50))
+print(avg_closure_1(150))
+
+
+print()
+print()
+
+# function inspection
+print(dir(avg_closure_1))
+print()
+print(dir(avg_closure_1.__code__))
+print(avg_closure_1.__code__.co_freevars)
+print(avg_closure_1.__closure__[0].cell_contents)
