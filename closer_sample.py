@@ -86,3 +86,45 @@ print()
 print(dir(avg_closure_1.__code__))
 print(avg_closure_1.__code__.co_freevars)
 print(avg_closure_1.__closure__[0].cell_contents)
+
+
+# 잘못된 클로저 사용
+def closure_ex2():
+    # free variable
+    cnt = 0
+    total = 0
+
+    def averager(v):
+        cnt += 1        # 참조하지 못하는 영역이다
+        total += v
+        return total / cnt
+    return averager
+
+avg_closure_2 = closure_ex2()
+# print(avg_closure_2(10))
+
+
+def closure_ex3():
+    # free variable
+    cnt = 0
+    total = 0
+
+    def averager(v):
+        nonlocal cnt, total     # cnt, total 이 자유변수가 된다
+        cnt += 1        # 참조하지 못하는 영역이다
+        total += v
+        return total / cnt
+    return averager
+
+
+avg_closure_3 = closure_ex3()
+print(avg_closure_3(10))
+print(avg_closure_3(30))
+print(avg_closure_3(70))
+
+
+# 함수내에서 값을 변경해서 리턴하는 것은 좋지 않은 디자인이다
+# 전역변수는 디버깅하는 경우에도 쉽지 않다
+
+
+# Outer Function 선언 후 Inner Function Return
