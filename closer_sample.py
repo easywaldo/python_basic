@@ -127,4 +127,8 @@ print(avg_closure_3(70))
 # 전역변수는 디버깅하는 경우에도 쉽지 않다
 
 
+<<<<<<< HEAD
 # Outer Function 선언 후 Inner Function Return
+=======
+# Outer Function 선언 후 Inner Function Return
+>>>>>>> a11abe2ec08b1226a62915dd758d9b7628af022d
