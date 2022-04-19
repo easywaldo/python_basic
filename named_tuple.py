@@ -79,3 +79,4 @@ print(ranks)
 students = [Classes(r, n) for r in ranks for n in numbers]
 print(len(students))
 print(students)
+
