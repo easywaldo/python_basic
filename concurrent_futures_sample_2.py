@@ -16,7 +16,7 @@
 
 import os
 import time
-from concurrent import futures
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, wait, as_completed
 from unittest import result
 
 
@@ -37,28 +37,42 @@ def main():
 
     # 시작 시간
     start_time = time.time()
-    
+
     # futures
     futures_list = []
-    
 
     # 결과건수
     # ProcessPoolExcutor
-    with futures.ThreadPoolExecutor() as excutor:
-        # map > 작업 순서 유지, 즉시 실행
-        result = excutor.map(sum_generator, WORK_LIST)
+    with ThreadPoolExecutor() as excutor:
+
+        for work in WORK_LIST:
+            # futures 반환
+            future = excutor.submit(sum_generator, work)
+            # schedule
+            futures_list.append(future)
+            # schedule 확인
+            print(f'Scheduled for {work} : {future}')
+
+        result = wait(futures_list, timeout=4)
+
+        # 성공
+        print(f'Completed Tasks : {result.done}')
+        
+        # 실패
+        print(f'Pending ones after wating for wating time : {str(result.not_done)}')
+        
+        # 결과 값 출력
+        # print([future.result() for future in result.done])
+
 
     # 종료 시간
     end_time = time.time() - start_time
 
-    # 출력 포맷
-    msg = '\n Result => {} Time : {:.2fs}s'
-
     # 최종 결과 출력
-    print(f'result : {list(result)} {end_time} elasped')
+    # print(f'result : {list(result)} {end_time} elasped')
 
 
 if __name__ == '__main__':
     main()
 
-
+print()
