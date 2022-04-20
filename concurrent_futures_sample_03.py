@@ -53,24 +53,21 @@ def main():
             # schedule 확인
             print(f'Scheduled for {work} : {future}')
 
-        # wait 결과 출력
-        result = wait(futures_list, timeout=1)
-
-        # 성공
-        print(f'Completed Tasks : {result.done}')
-        
-        # 실패
-        print(f'Pending ones after wating for wating time : {str(result.not_done)}')
-        
-        # 결과 값 출력
-        # print([future.result() for future in result.done])
-
+        # as_completed 결과 출력
+        for future in as_completed(futures_list):
+            result = future.result()
+            done = future.done()
+            cancelled = future.cancelled
+            
+            # future 결과 확인
+            print(f'Future Result : {result} , Done : {done}')
+            print(f'Future Cancelled : {cancelled}')
 
     # 종료 시간
-    end_time = time.time() - start_time
+    # end_time = time.time() - start_time
 
     # 최종 결과 출력
-    # print(f'result : {list(result)} {end_time} elasped')
+    print(f'result : {list(result)} {end_time} elasped')
 
 
 if __name__ == '__main__':
