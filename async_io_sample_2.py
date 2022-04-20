@@ -5,24 +5,35 @@ from urllib.request import urlopen
 from concurrent.futures import ThreadPoolExecutor
 import threading
 
+from bs4 import BeautifulSoup
+import ssl
+
+context = ssl._create_unverified_context()
+
 
 # 실행 시작 시간
 start = timeit.default_timer()
 
-urls = ['http://daum.net', 'https://naver.com', 'https://tistory.com', 'https://hott.kr']
+urls = ['http://slowsplendidyoungplan.neverssl.com/online']
 
 
 # url open 을 병렬로 실행하기 위한 메서드
 async def fetch(url, executor):
     # 스레드명 출력
-    print('Thread Name : ' , threading.current_thread().getName(), 'Start', url)
+    print('Thread Name : ', threading.current_thread().getName(), 'Start', url)
     
     # 실행
     response = await loop.run_in_executor(executor, urlopen, url)
-    print('Thread Name : ' , threading.current_thread().getName(), 'Done', url)
+    soup = BeautifulSoup(response.read(), 'html.parser')
+    
+    # 전체 페이지 소스 확인
+    print(soup.prettify())
+    
+    print('Thread Name :', threading.current_thread().getName(), 'Done', url)
     
     # 결과 반환
-    return response.read()[0:10]
+    return
+    # return response.read()[0:10]
     
 
 # 메인 작업 스레드
