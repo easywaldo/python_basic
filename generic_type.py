@@ -49,3 +49,6 @@ def test(x: T) -> T:
     return x
 
 test(10000)
+
+
+print(Siri.mro())
