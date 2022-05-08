@@ -36,3 +36,34 @@ print(num_arr)
 print(num_arr.itemsize)
 num_arr.extend([100, 200, 300])
 print(num_arr)
+
+
+ns = [('waldo', 33), ('nick', 22), ('leo', 42)]
+def age(t):
+    return t[1]
+ns.sort(key=age)
+print(ns)
+ns.sort(key=age, reverse=True)
+print(ns)
+ns.sort(key=lambda t: t[1], reverse=False)
+print(ns)
+ns.sort(key=lambda t: len(t[0]), reverse=True)
+print(ns)
+
+
+print(list(sorted(ns, key=lambda x: x[1], reverse=True)))
+print(ns)
+
+org = (3, 1, 2)
+clone_t = sorted(org)
+
+print(org)
+print(clone_t)
+
+cpy = tuple(sorted(org))
+print(cpy)
+print(org)
+
+org = ('321', '214', '197')
+cpy = tuple(sorted(org, key=lambda x: int(x[0])))
+print(cpy)
