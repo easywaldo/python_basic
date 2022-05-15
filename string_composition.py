@@ -18,3 +18,12 @@ print(s)
 # String format using tuple in loop
 for f in friends:
     print('My friend %s is %d years old' % (f[0], f[1]))
+
+print('%f' % 101)
+
+print('%d' % 3.14)
+
+
+# String format using dictionary
+s = '%(name)s : %(age)d ' % {'name': 'easywadlo', 'age': 42}
+print(s)
