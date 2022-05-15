@@ -57,3 +57,9 @@ print('num: %+d' % n)
 print('height: %-+10.3f입니다.' % 3.14)
 
 print('%(h)s: %(v)-+10.3f입니다.' % {'h': 'height', 'v': 3.143435})
+
+
+# string format method
+fs = '{0}...{1}...{2}'
+ms = fs.format('Robot', 124, 'Box')
+print(ms)
