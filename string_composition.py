@@ -9,3 +9,12 @@ for f in friends:
 
 s = 'My name is %s ' % 'Waldo'
 print(s)
+
+
+# String format using tuple
+s = 'My friend %s is %d years old and %fcm tall. ' % ('Jung', 22, 178.5)
+print(s)
+
+# String format using tuple in loop
+for f in friends:
+    print('My friend %s is %d years old' % (f[0], f[1]))
