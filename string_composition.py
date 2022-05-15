@@ -27,3 +27,15 @@ print('%d' % 3.14)
 # String format using dictionary
 s = '%(name)s : %(age)d ' % {'name': 'easywadlo', 'age': 42}
 print(s)
+
+
+# String format width
+print('height: %f' % 3.14)
+print('height: %.3f' % 3.14)
+print('height: %.2f' % 3.14)
+
+print('height: %7.2f입니다.' % 3.14)
+print('height: %10.2f입니다.' % 3.14)
+
+print('height: %07.2f입니다.' % 3.14)
+print('height: %010.2f입니다.' % 3.14)
