@@ -39,3 +39,21 @@ print('height: %10.2f입니다.' % 3.14)
 
 print('height: %07.2f입니다.' % 3.14)
 print('height: %010.2f입니다.' % 3.14)
+
+# String format width right side
+print('height: %-7.2f입니다.' % 3.14)
+print('height: %-10.2f입니다.' % 3.14)
+
+
+# String format number flag
+n = 3
+print('num: %+d' % n)
+
+n = -8
+print('num: %+d' % n)
+
+
+# String format dictionary flag
+print('height: %-+10.3f입니다.' % 3.14)
+
+print('%(h)s: %(v)-+10.3f입니다.' % {'h': 'height', 'v': 3.143435})
