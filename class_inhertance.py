@@ -12,6 +12,9 @@ class Son(Father, Mother):
     def jump(self):
         print('so high')
 
+    def dive(self):
+        print('so deep, son style')
+
 
 def main():
     s = Son()
