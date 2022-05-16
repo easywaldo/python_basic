@@ -3,7 +3,12 @@ class Father:
         print('so fast!!')
 
 
-class Son(Father):
+class Mother:
+    def dive(self):
+        print('so deep')
+
+
+class Son(Father, Mother):
     def jump(self):
         print('so high')
 
@@ -12,6 +17,7 @@ def main():
     s = Son()
     s.run()
     s.jump()
+    s.dive()
 
 
 main()
