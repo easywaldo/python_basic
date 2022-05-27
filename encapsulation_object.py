@@ -29,5 +29,10 @@ def main():
     print(p)
     print(p.__dict__)
 
+    p.__dict__['_Person__age'] = 100
+    print(p)
+    print(p.__dict__)
+
+
 if __name__ == '__main__':
     main()
