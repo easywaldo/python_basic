@@ -16,3 +16,6 @@ if __name__ == '__main__':
     print(f2)
     print(f1(2))
     print(f2(3))
+
+    print(f1.__closure__[0].cell_contents)
+    print(f2.__closure__[0].cell_contents)
