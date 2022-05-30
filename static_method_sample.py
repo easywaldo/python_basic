@@ -21,6 +21,11 @@ class Simple():
         print('this is not static method')
         return Simple.count
 
+    @classmethod
+    def sm4(cls):
+        print('this is class method')
+        return cls.count
+
 
 def main():
     Simple.sm()
@@ -33,6 +38,9 @@ def main():
     s2 = Simple()
     print(s2.get_count())
     print(Simple.get_count())
+
+    # class method
+    print(s2.sm4())
 
 
 main()
