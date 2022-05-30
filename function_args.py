@@ -34,4 +34,10 @@ def post_info_v2(*tags, title, content, **kwargs):
 
 post_info('파이썬 프로그래밍', '합수의 다양한 실습', '#파이썬', '#FastAPI')
 post_info_v2('#파이썬', '#FastAPI', title='파이썬 프로그래밍', content='합수의 다양한 실습')
-post_info_v2('#파이썬', '#FastAPI', title='파이썬 프로그래밍', content='합수의 다양한 실습', lectureName='redis', lectureDescription='cache server')
+post_info_v2(
+    '#파이썬', 
+    '#FastAPI', 
+    title='파이썬 프로그래밍', 
+    content='합수의 다양한 실습', 
+    lectureName='redis', 
+    lectureDescription='cache server')
