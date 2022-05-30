@@ -36,8 +36,8 @@ def repeat(obj):
         del obj.age
     return inner
         
-use_slot_time = timeit.repeat(repeat(ws), number = 100)
-no_slot_time = timeit.repeat(repeat(wos), number = 100)
+use_slot_time = timeit.repeat(repeat(ws), number = 9999)
+no_slot_time = timeit.repeat(repeat(wos), number = 9999)
 
 print("use slot time: ", min(use_slot_time))
 print("no slot time: ", min(no_slot_time))
