@@ -26,6 +26,11 @@ class Simple():
         print('this is class method')
         return cls.count
 
+    @classmethod
+    def sm5(cls):
+        print('this is class method and initialzing..')
+        return cls()
+
 
 def main():
     Simple.sm()
@@ -40,6 +45,10 @@ def main():
     print(Simple.get_count())
 
     # class method
+    print(s2.sm4())
+
+    # clsss method
+    s2.sm5()
     print(s2.sm4())
 
 
